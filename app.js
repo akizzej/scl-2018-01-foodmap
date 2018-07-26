@@ -19,9 +19,4 @@ function findMe(){
     }
     navigator.geolocation.getCurrentPosition(localizacion,error);
 }
-$(document).ready(function(){
-    $('.modal').modal();
-    $('.materialbox').materialbox();
-    $('select').formSelect();
-    
-  });
+
