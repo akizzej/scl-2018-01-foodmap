@@ -1,5 +1,5 @@
 function findMe(){
-    var output = document.getElementById('map');
+    let output = document.getElementById('map');
     // Verificar si soporta geolocalizacion
     if (navigator.geolocation) {
         output.innerHTML = "<p>Tu navegador soporta Geolocalizacion</p>";
@@ -8,9 +8,9 @@ function findMe(){
     }
     //Obtenemos latitud y longitud
     function localizacion(posicion){
-        var latitude = posicion.coords.latitude;
-        var longitude = posicion.coords.longitude;
-        var imgURL = "https://maps.googleapis.com/maps/api/staticmap?center="+latitude+","+longitude+"&size=600x300&markers=color:red%7C"+latitude+","+longitude+"&key=AIzaSyDmCPHxsb3UDcZiJgRL7x4UkRP4Q9yCCqU";
+        let latitude = posicion.coords.latitude;
+        let longitude = posicion.coords.longitude;
+        let imgURL = "https://maps.googleapis.com/maps/api/staticmap?center="+latitude+","+longitude+"&size=600x300&markers=color:red%7C"+latitude+","+longitude+"&key=AIzaSyDmCPHxsb3UDcZiJgRL7x4UkRP4Q9yCCqU";
         output.innerHTML ="<img src='"+imgURL+"'>";
         
     }
@@ -21,5 +21,6 @@ function findMe(){
 }
 $(document).ready(function(){
     $('.modal').modal();
+    $('.materialbox').materialbox();
     
   });
