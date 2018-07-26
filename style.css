@@ -1,5 +1,7 @@
 #map{
     margin: 100px;
+    width: 600px;
+    height: 400px;
 }
 body {
     background-color: #333;
