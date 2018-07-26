@@ -1,62 +1,64 @@
-var map;
-var infowindow;
+let map;
+let infowindow;
 
 navigator.geolocation.getCurrentPosition(initMap);
 
 function initMap(position) {
-    //  mapa con las coordenadas actuales
+    
     var lat = position.coords.latitude;
     var lng = position.coords.longitude
-    var pyrmont = {lat, lng};
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat, lng},
-    zoom: 15
+    var pos = {lat, lng};
+    map = new google.maps.Map(document.getElementById('map'), {
+    center: pos,
+    zoom: 16
   });
   
-  infowindow = new google.maps.InfoWindow();
-  //Creamos el servicio PlaceService y enviamos la petición
-   var service = new google.maps.places.PlacesService(map);
-  service.nearbySearch({
-     //  localización, el radio y el tipo de lugar a obtener 
-    location: pyrmont,
-    radius: 500,
-    // types le pasamos un array con los tipos de búsqueda que queremos hacer
-    type: ['restaurant']
-  }, callback);
-
-
-  function callback(results, status) {
-    
+    infowindow = new google.maps.InfoWindow();
+    var service = new google.maps.places.PlacesService(map);
+    service.nearbySearch({
+      location: pos,
+      radius: 500,
+      type: ['restaurant']
+    }, callback);
+  
+    function callback(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
       for (var i = 0; i < results.length; i++) {
-        createMarker(results[i]); 
-        //console.log(results);
+        createMarker(results[i]);
+        //console.log(results[i].id);
+        showInformationPlaces(results[i]);
       }
-
     }
   }
-  function showinformationPlaces(place){
-      const name = place.name;
-      const radius = place.vicinity;
-      const photo = place.photos[0].getUrl({'maxWidth':350, 'maxHeight':350});
-  }
 
-  // marcador
-  function createMarker(place) {
+  function showInformationPlaces(place){
+    /*  */
+    const photo = place.photos[0].getUrl({'maxWidth': 450, 'maxHeight': 450});
     
+    const containerInfo = document.getElementById('infoContainer');
+    containerInfo.innerHTML += `<img src='${photo}'></img>` 
+
+    const name = place.name;
+    const address = place.vicinity;
+    const containerModal = document.getElementById('modalInfo');
+    containerModal.innerHTML += `<h4>${name}</h4><p>${address}</p>` 
+    // console.log(name);
+    // console.log(radius);
+    // console.log(photo);
+}
+
+  function createMarker(place) {
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
       map: map,
       position: place.geometry.location
     });
-    //el evento click del marcador
+
+  
     google.maps.event.addListener(marker, 'click', function() {
       infowindow.setContent(place.name);
-      
       infowindow.open(map, this);
-     
     });
   }
-    
-  }
   
+ }
