@@ -22,5 +22,6 @@ function findMe(){
 $(document).ready(function(){
     $('.modal').modal();
     $('.materialbox').materialbox();
+    $('select').formSelect();
     
   });
