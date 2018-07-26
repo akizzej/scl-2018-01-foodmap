@@ -26,17 +26,17 @@ function initMap(position) {
       for (var i = 0; i < results.length; i++) {
         createMarker(results[i]);
         //console.log(results[i].id);
-        showInformationPlaces(results[i]);
+        mostrarInfo(results[i]);
       }
     }
   }
 
-  function showInformationPlaces(place){
+  function mostrarInfo(place){
     /*  */
-    const photo = place.photos[0].getUrl({'maxWidth': 450, 'maxHeight': 450});
+    const photo = place.photos[0].getUrl({'maxWidth': 800, 'maxHeight': 400});
     
     const containerInfo = document.getElementById('infoContainer');
-    containerInfo.innerHTML += `<img src='${photo}'></img>` 
+    containerInfo.innerHTML += `<img src='${photo}'>` 
 
     const name = place.name;
     const address = place.vicinity;
@@ -62,3 +62,4 @@ function initMap(position) {
   }
   
  }
+
