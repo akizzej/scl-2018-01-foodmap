@@ -5,6 +5,7 @@
 }
 body {
     background-color: #333;
+    background-image: url("img/foto.jpg");
    
     
 }
@@ -25,12 +26,14 @@ h3{
 .col s4{
     float: left;
 }
-#infoContainer{
+#infoContainer img{
     width: 600px;
     height: 400px;
     align-content: center;
     padding: 50px;
 }
-
+input-field{
+    color: white;
+}
 
 
