@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>Geolocalizacion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">
+	
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h1>FOOD<span style = "color: rgb(182, 179, 41);">MAP</span></h1>
+                <button onclick="findMe()">Mostrar ubicación</button>
+	            <div id="map"></div>
+                
+                <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+           
+                    <div class="modal" id= "modal1">
+                        <h4>Hola soy un restorant</h4>
+                        <p>Estoy ubicado por geolocalización otsea.</p>
+                    </div>
+            </div>
+        </div>
+    </div>
+	
+	
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmCPHxsb3UDcZiJgRL7x4UkRP4Q9yCCqU"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
