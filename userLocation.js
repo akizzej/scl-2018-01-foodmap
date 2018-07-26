@@ -30,10 +30,15 @@ function initMap(position) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
       for (var i = 0; i < results.length; i++) {
         createMarker(results[i]); 
-        console.log(results);
+        //console.log(results);
       }
 
     }
+  }
+  function showinformationPlaces(place){
+      const name = place.name;
+      const radius = place.vicinity;
+      const photo = place.photos[0].getUrl({'maxWidth':350, 'maxHeight':350});
   }
 
   // marcador
