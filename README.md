@@ -8,3 +8,6 @@ se planifica su creación mediante un tablero de trello.
 
 La aplicación le permitirá al usuario acceder a los restorantes que esten cerca de su ubicación, indicandole mediante un modal cual es el nombre del local y su dirección, para una próxima actualización tambien será posible filtrar por categorias.
 
+acá el link 
+
+(https://akizzej.github.io/scl-2018-01-foodmap/preload.html)
