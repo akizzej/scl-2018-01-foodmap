@@ -38,6 +38,8 @@ function initMap(position) {
     const containerInfo = document.getElementById('infoContainer');
     containerInfo.innerHTML += `<img src='${photo}'>` 
 
+    
+
     const name = place.name;
     const address = place.vicinity;
     const containerModal = document.getElementById('modalInfo');
@@ -62,4 +64,7 @@ function initMap(position) {
   }
   
  }
-
+//inicializadores de materialize
+ $(document).ready(function(){
+    $('select').formSelect();
+  });
