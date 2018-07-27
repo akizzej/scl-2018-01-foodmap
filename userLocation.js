@@ -67,4 +67,5 @@ function initMap(position) {
 //inicializadores de materialize
  $(document).ready(function(){
     $('select').formSelect();
+    $('.modal').modal();
   });
